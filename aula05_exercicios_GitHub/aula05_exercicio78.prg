@@ -10,12 +10,11 @@ Function Main()
     nNum := val(nNum)
 
     IF nNum > 0
-        WHILE nI <= nNum
+        FOR nI := 1 to nNum
             IF nNum % nI == 0
                 nDivisores++
             ENDIF 
-            nI++
-        ENDDO 
+        NEXT nI
         
         IF nDivisores = 2
             QOUT("")
