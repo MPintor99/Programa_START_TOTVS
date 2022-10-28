@@ -15,9 +15,9 @@ Function Main()
     aCript := encrypt(cMSG)
     QOUT("Mensagem criptografada com sucesso: " + hb_valtoexp(aCript))
     aCript := Turing(aCript)
-    QOUT("************************************************************************************************************")
+    QOUT("**********************************************************************************************************")
     QOUT("Ops, Alan Turing descriptografou sua mensagem e o resultado foi: " + hb_valtoexp(aCript))
-    QOUT("************************************************************************************************************")
+    QOUT("**********************************************************************************************************")
 Return NIL
 
 Function encrypt(MSG)

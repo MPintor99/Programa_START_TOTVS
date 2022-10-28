@@ -16,6 +16,6 @@ Function Main()
         Accept "Voce nao digitou um numero valido, insira um numero de 1 a 12: " TO nI 
     ENDDO
 
-    QOUT("O mês selecionado tem" , aMeses[VAL(nI)] , "dias.")
+    QOUT("O mes selecionado tem" , aMeses[VAL(nI)] , "dias.")
 
 Return NIL

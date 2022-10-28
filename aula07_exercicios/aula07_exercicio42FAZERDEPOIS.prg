@@ -5,24 +5,39 @@
 
 Function Main()
 
-    local aM := {{},{},{},{},{}}
-    local nI := 0
-    local cAceita := ""
-    FOR nI := 1 TO 5 
+    Local aNome  := ARRAY(5)
+    local aNotas := ARRAY(15)
+    local aResul := ARRAY(5)
+    Local nNotas := 0
+    local nCont2 := 0
+    local nCont  := 0
+    local nAux   := 0
+    local cNome  := ""
 
-        aAdd(aM[1], CHR(HB_RandomInt(65 , 90)))
-        aAdd(aM[2], CHR(HB_RandomInt(65 , 90)))
-        aAdd(aM[3], CHR(HB_RandomInt(65 , 90)))
-        aAdd(aM[4], CHR(HB_RandomInt(65 , 90)))
-        aAdd(aM[5], CHR(HB_RandomInt(65 , 90)))
-        
-    NEXT nI
 
-    QOUT(hb_valtoexp(aM[1]))
-    QOUT(hb_valtoexp(aM[2]))
-    QOUT(hb_valtoexp(aM[3]))
-    QOUT(hb_valtoexp(aM[4]))
-    QOUT(hb_valtoexp(aM[5]))
-    QOUT((aM[1,1]),(aM[2,2]),(aM[3,3]),(aM[4,4]),(aM[5,5]))
+    For nCont := 1 to 5
+        ACCEPT "Digite o nome do aluno: " to aNome[nCont] 
+        for nCont2 := 1 to 3
+            Accept "Digite a nota: " to nNotas
+            nNotas := val(nNotas)
+            aNotas[nCont2] := nNotas
 
-Return NIL
+            ASORT(aNotas[nCont2])
+        NEXT
+
+        nAux:= (aNotas[2] + aNotas [3]) / 2
+        aResul[nCont] := nAux
+
+
+        NEXT
+        qout("digite 1 para ")
+        for nCont := 1 to 5 
+            for nCont2 := 1 to 3
+
+            ASORT(aNome)
+            NEXT
+            qout("o Aluno " + hb_valtoexp(aNome[nCont]) + " tem a nota " + hb_valtoexp(aResul[nCont]))
+
+        NEXT
+
+RETURN NIL

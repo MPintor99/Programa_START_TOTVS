@@ -24,7 +24,12 @@ Static Function ENCHEVETOR(aVetores , nNum)
         
         IF AScan(aVetores, nNum) == 0
             aAdd(aVetores, nNum)
+        ELSE
+            nI--
         ENDIF
     NEXT 
 
 Return NIL
+
+
+
