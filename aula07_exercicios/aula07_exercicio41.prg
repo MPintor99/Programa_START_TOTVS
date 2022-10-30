@@ -7,10 +7,10 @@ Function Main()
     local aMatriz := {{"O","Q","*","I"}, ;
                       {"E","*","E","S"}, ;
                       {"R","E","U","T"}, ;
-                      {"A", "*", "*", "S"}}
-    local nI := 0
-    local nJ := 0
-    local cAux := ""
+                        {"A", "*", "*", "S"}}
+    local nI      := 0
+    local nJ      := 0
+    local cAux    := ""
 
     FOR nI := 1 TO 3
         FOR nJ := nI + 1 TO 4

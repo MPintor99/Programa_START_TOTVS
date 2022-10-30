@@ -4,9 +4,10 @@
 
 Function Main()
 
-    local aM := {{},{},{},{},{}}
-    local nI := 0
+    local aM      := {{},{},{},{},{}}
+    local nI      := 0
     local cAceita := ""
+
     FOR nI := 1 TO 5 
 
         aAdd(aM[1], CHR(HB_RandomInt(65 , 90)))

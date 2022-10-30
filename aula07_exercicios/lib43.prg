@@ -13,7 +13,7 @@ Function EMBARALHA(Vetor)
 
 Return Vetor
 
-Function VETOR21(Cartas)
+Function VETOR 21(Cartas)
 
     local nI := 0
     local a21 := array(21)

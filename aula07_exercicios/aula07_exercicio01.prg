@@ -10,7 +10,7 @@ Function Main()
 
     Accept "Escolha um numero de 1 a 7 para ver o dia da semana correspondente ao numero digitado: " TO nI
 
-    WHILE !EHNUMERO(nI) .AND. Val(nI) <1 .OR. Val(nI) > 7
+    WHILE !EHNUMERO(nI) .AND. Val(nI) < 1 .OR. Val(nI) > 7
         Accept "Numero inserido inválido, escolha um numero de 1 a 7 para ver o dia da semana correspondente ao numero digitado: " TO nI
     ENDDO
     
