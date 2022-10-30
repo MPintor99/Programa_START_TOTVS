@@ -29,12 +29,12 @@
 // usuário não escolhera uma nova carta, apenas indicará em que
 // coluna está a carta escolhida inicialmente.
 // h. Exibir na tela a 11a carta do vetor de 21 posições.
-// SET PROCEDURE TO lib43.prg
+SET PROCEDURE TO lib43.prg
 
 Function Main()
 
     local nI     := 0
-    local nOpcao := 0
+    local nOpcao := 1
     local aCartas2 := {}
     local aMatriz7 := {}
     local a21 := {}
@@ -55,112 +55,24 @@ Function Main()
     EMBARALHA(@aCartas)
     a21 := VETOR21(aCartas)
     ?
-    a21 := MATRIZ7(a21)
-    QOUT("")
-    MatrizVetor(a21)
-    // INPUT "Coloque aqui qual a coluna que sua carta está: " TO nOpcao
-    // ESCOLHA(nOpcao , @a21)
-    // a21 := ESCOLHA(nOpcao , @a21)
-
-Return NIL
-
-Function EMBARALHA(aCartas)
-
-    local nAleatorio := 0
-    local nI         := 0
-    local nAux       := 0
-
-    FOR nI := 1 TO len(aCartas)
-        nAleatorio := INT(random() % len(aCartas) + 1)
-        nAux := aCartas[nI]
-        aCartas[nI] := aCartas[nAleatorio]
-        aCartas[nAleatorio] := nAux
-    NEXT nI 
-Return aCartas
-
-Function VETOR21(Cartas)
-
-    local nI := 0
-    local a21 := array(21)
-
-    FOR nI := 1 TO 21
-
-        a21[nI] := Cartas[nI]
-
-    NEXT
-    QOUT(hb_valtoexp(a21))
-Return a21
-
-Function MATRIZ7(Cartas)
-
-    local nI   := 0
-    local nJ   := 0
-    local nAux := 21
-    local aMatriz7 := ARRAY(7,3)
-
     QOUT("*******************")
     QOUT("Escolha uma carta")
     QOUT("*******************")
-    FOR nJ := 1 TO 7
-        FOR nI := 1 TO 3
-            aMatriz7[nJ,nI] := Cartas[nAux]
-            nAux--
-        NEXT nI 
-    NEXT nJ
+    a21 := MATRIZ7(a21)
+    QOUT("")
+    INPUT "Coloque aqui qual a coluna que sua carta está: " TO nOpcao
+    a21 := MATRIZVETOR(a21 , nOpcao)
+    a21 := MATRIZ7(a21)
+    QOUT("")
+    INPUT "Coloque aqui qual a coluna que sua carta está: " TO nOpcao
+    a21 := MATRIZVETOR(a21 , nOpcao)
+    a21 := MATRIZ7(a21)
+    QOUT("")
+    INPUT "Coloque aqui qual a coluna que sua carta está: " TO nOpcao
 
-    FOR nJ := 1 TO 7
-    QOUT(hb_valtoexp(aMatriz7[nJ]))
-    NEXT nJ
+    a21 := MATRIZVETOR(a21 , nOpcao)
+    QOUT("Sua carta escolhida foi: " , a21[11])
 
-Return aMatriz7
-
-Function MatrizVetor(aMatriz)
-
-    local aDestino := {}
-    local cDestino := ""
-    local nI := 0
-    local nAux := 1
-
-    While len(aDestino) < 21
-        FOR nI := 1 TO 3
-            cDestino := aMatriz[nAux,nI]
-            Aadd(aDestino, cDestino)
-        Next nI
-        nAux++
-    ENDDO
-
-    QOUT(hb_valtoexp(aDestino))
-
+    
 Return NIL
-
-// Function ESCOLHA(Opcao , Matriz)
-
-//     local nI := 0
-//     local cAux := ""
-//     local aDest := {}
-
-//     QOUT("")
-
-//     IF Opcao == 1
-
-//         ACOPY(Matriz, aDest)
-//         QOUT(aDest)
-//         FOR nI := 1 TO 7
-//             cAux := Matriz[nI , 2]
-//             Matriz[nI , 2] := Matriz[nI , 1]
-//             Matriz[nI,1] := cAux
-//             // QOUT(hb_valtoexp(Matriz[nI]))
-//         NEXT nI
-
-//     ELSEIF Opcao == 3
-//         FOR nI := 1 TO 7
-//             cAux := Matriz[nI , 3]
-//             Matriz[nI , 2] := Matriz[nI , 3]
-//             Matriz[nI,3] := cAux
-//             QOUT(hb_valtoexp(Matriz[nI]))
-//         NEXT nI
-//     ENDIF
-
-// Return Matriz
-
 
